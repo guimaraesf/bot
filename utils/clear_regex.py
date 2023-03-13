@@ -2,7 +2,7 @@ from pyspark.sql.functions import regexp_replace, col
 
 def clear_regex(file_name, df, logger):
     if file_name == "AuxilioBrasil.csv":
-        logger.info(f"Cleaning all special chars.")
+        logger.info(f"Removendo caracteres especiais.")
         return df.select(
             regexp_replace(col("MES_COMPETENCIA"), "[^A-Za-z0-9 ]", "").alias("MES_COMPETENCIA"),
             regexp_replace(col("MES_REFERENCIA"), "[^A-Za-z0-9 ]", "").alias("MES_REFERENCIA"),
@@ -16,5 +16,5 @@ def clear_regex(file_name, df, logger):
         )
 
     else:
-        logger.info(f"File {file_name} not found")
+        logger.info(f"Arquivo {file_name} não encontrado")
 

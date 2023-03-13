@@ -47,7 +47,7 @@ def get_dataframe_from_file(spark, file_name, schema, query, logger):
     for file in os.listdir(local_dir):
         file_path = local_dir + "/" + file
         if file_name in file:
-            logger.info(f"{file_name} found, proceeding with the transformations.")
+            logger.info(f"{file_name} encontrado. Procedendo com as transformações.")
 
             # logger.info("Popen Hadoop")
             # rm = Popen(["hadoop", "fs", "-rm", local_dir + "/" + file], stdin=PIPE, bufsize=-1)
@@ -56,7 +56,7 @@ def get_dataframe_from_file(spark, file_name, schema, query, logger):
             # put = Popen(["hadoop", "fs", "-put", local_dir + "/" + file], stdin=PIPE, bufsize=-1)
             # put.communicate()
 
-            logger.info(f"Reading CSV: {file_name}")
+            logger.info(f"Lendo o arquivo CSV: {file_name}")
             df = spark.read.option("delimiter", ";").option('encoding', 'ISO-8859-1').csv(file_path, header=True, schema=schema, enforceSchema=True)
             df = df.select(query)
 
