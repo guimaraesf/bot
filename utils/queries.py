@@ -1,0 +1,11 @@
+select_AuxilioBrasil = [
+    "MES_COMPETENCIA",
+    "MES_REFERENCIA",
+    "UF",
+    "CODIGO_MUNICIPIO_SIAFI",
+    "NOME_MUNICIPIO",
+    "CPF_FAVORECIDO",
+    "NIS_FAVORECIDO",
+    "NOME_FAVORECIDO",
+    "VALOR_PARCELA"
+]
